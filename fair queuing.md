@@ -85,15 +85,36 @@ and G. Varghese in 1995 as an efficient (with O(1) complexity) and fair
 algorithm.
 
 
-# [Token Bucket (Leaky Bucket)](<http://www2.ic.uff.br/~michael/kr1999/6-multimedia/6_06-scheduling_and_policing.htm>)
+# Token Bucket and Leaky Bucket
 
 
->Token-bucket filters provide an alternative to fair queuing for providing a traffic allocation to each of several groups. The main practical difference between fair queuing and token bucket is that if one sender is idle, fair queuing distributes that sender’s bandwidth among the other senders. Token bucket does not: the bandwidth a sender is allocated is a bandwidth cap.
+Token Bucket and Leaky Bucket are traffic shaping methods.
 
 
 From Wikipedia:
 >The token bucket is an algorithm used in packet switched computer networks and telecommunications networks. It can be used to check that data transmissions, in the form of packets, conform to defined limits on bandwidth and burstiness (a measure of the unevenness or variations in the traffic flow). It can also be used as a scheduling algorithm to determine the timing of transmissions that will comply with the limits set for the bandwidth and burstiness: see network scheduler.
 
+>The leaky bucket is an algorithm based on an analogy of how a bucket with a leak will overflow if either the average rate at which water is poured in exceeds the rate at which the bucket leaks or if more water than the capacity of the bucket is poured in all at once, and how the water leaks from the bucket at an (almost) constant rate. It can be used to determine whether some sequence of discrete events conforms to defined limits on their average and peak rates or frequencies, or to directly limit the actions associated to these events to these rates, and may be used to limit these actions to an average rate alone, i.e. remove any variation from the average.
+
+
+**Leaky bucket:**
+
+Parameters: rate
+1. Smooth out traffic by transmitting packets at a constant rate.
+2. Does not permit burstiness (Bursty traffic is converted into uniform traffic).
+3. If bucket is full, packets are discard.
+4. Application: Traffic shaping or traffic policing.
+
+**Token bucket:**
+
+Parameters: rate, burstiness.
+1. The bucket holds tokens generated at regular intervals of time and has has maximum capacity. If there are tokens in the bucket and a ready packet, a token is removed from the bucket and the packet is send.
+2. Token bucket smooths traffic too but permits burstiness - which is equivalent to the number of tokens accumulated in the bucket. It allows the output rate vary depending on the size of burst.
+3. Discard tokens (never discard packets) when bucket is full.
+4. Application: Network traffic shaping or rate limiting.
+
+
+Token-bucket filters provide an alternative to fair queuing for providing a traffic allocation to each of several groups. The main practical difference between fair queuing and token bucket is that if one sender is idle, fair queuing distributes that sender’s bandwidth among the other senders. Token bucket does not: the bandwidth a sender is allocated is a bandwidth cap.
 
 Combining fair queuing with token bucket might seem improbable: the goal of fair queuing is to be work-conserving, allowing the bandwidth assigned to an idle input class to be divided among the active input classes, and the goal of token bucket is generally to limit a class to its token-bucket-defined maximum transmission rate. The usual approach to a hierarchy-based synthesis is to allow the administrator to decide, at each node of the hierarchy, whether or not the node can “borrow” (without repayment) bandwidth from inactive siblings. If it can, the set of siblings with mutual borrowing privileges resembles a fair-queuing scheduler; if not, the node is more like a token-bucket scheduler.
 
@@ -103,6 +124,8 @@ Combining fair queuing with token bucket might seem improbable: the goal of fair
 [An Introduction to Computer Networks - Queuing and Scheduling](<https://intronetworks.cs.luc.edu/current/html/queuing.html>)
 
 [Scheduling and Policing Mechanisms](<http://www2.ic.uff.br/~michael/kr1999/6-multimedia/6_06-scheduling_and_policing.htm>)
+
+[What is the difference between token bucket and leaky bucket algorithms?](https://www.quora.com/What-is-the-difference-between-token-bucket-and-leaky-bucket-algorithms)
 
 [General Processor Sharing, Weighted Fair Queueing, and Deficit Round Robin](<http://www.mathcs.emory.edu/~cheung/Courses/558/Syllabus/11-Fairness/>)
 
