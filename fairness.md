@@ -1,8 +1,8 @@
-#[Max-Min Fairness](http://www.mathcs.emory.edu/~cheung/Courses/558/Syllabus/11-Fairness/Fair.html)
+# [Max-Min Fairness](http://www.mathcs.emory.edu/~cheung/Courses/558/Syllabus/11-Fairness/Fair.html)
 
 A commonly used definition of fairness in computer network is Max-Min fairness.
 
-##Definition
+## Definition
 
 >Maximize the allocation for the most poorly treated flows (with the minimum resource demands), i.e., maximize the minimum.
 
@@ -17,9 +17,9 @@ Max-min fairness provides:
 2. No other allocations satisfying (1) has a higher minimum allocation,
 3. Condition (2) recursively holds as we remove the minimal user and reduce the total resource accordingly.
 
-##Advantages and Disadvantages
+## Advantages and Disadvantages
 
-###Advantages
+### Advantages
 
 1. Simple
 2. Small players get a big share
@@ -31,7 +31,7 @@ Max-min fair resource sharing results in higher average throughput and better ut
 
 **Fair queuing** is an example of a max-min fair packet scheduling algorithm for statistical multiplexing and best effort packet-switched networks, since it gives scheduling priority to users that have achieved lowest data rate since they became active. In case of equally sized data packets, **round-robin scheduling is max-min fair**.
 
-###Disadvantages
+### Disadvantages
 
 1. Not applicable in complex networks
 2. Big players geta small share
@@ -42,9 +42,9 @@ The max-min fairness provides lower average throughput than maximum throughput r
 
 **A compromise between max-min fairness and maximum throughput scheduling is proportional fairness**, where the resources are divided with the goal to achieve the same cost to each user, or to minimize the maximum cost per unit that a dataflow reaches. Expensive data flows achieves lower service quality than others in proportional fairness, but does not suffer from starvation. Max-min fairness results in more stable service quality, and therefore perhaps "happier customers".
 
-#Proportional Fairness
+# Proportional Fairness
 
-##Definition
+## Definition
 
 From Wikipedia:
 >Proportional fair is a compromise-based scheduling algorithm. It is based upon maintaining a balance between two competing interests: Trying to maximize total wired/wireless network throughput while at the same time allowing all users at least a minimal level of service. This is done by assigning each data flow a data rate or a scheduling priority (depending on the implementation) that is inversely proportional to its anticipated resource consumption.
