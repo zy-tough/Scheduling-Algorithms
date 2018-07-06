@@ -85,7 +85,7 @@ and G. Varghese in 1995 as an efficient (with O(1) complexity) and fair
 algorithm.
 
 
-# [Token Bucket](<https://intronetworks.cs.luc.edu/current/html/queuing.html>)
+# [Token Bucket (Leaky Bucket)](<http://www2.ic.uff.br/~michael/kr1999/6-multimedia/6_06-scheduling_and_policing.htm>)
 
 
 >Token-bucket filters provide an alternative to fair queuing for providing a traffic allocation to each of several groups. The main practical difference between fair queuing and token bucket is that if one sender is idle, fair queuing distributes that sender’s bandwidth among the other senders. Token bucket does not: the bandwidth a sender is allocated is a bandwidth cap.
@@ -101,6 +101,8 @@ Combining fair queuing with token bucket might seem improbable: the goal of fair
 # Reference
 
 [An Introduction to Computer Networks - Queuing and Scheduling](<https://intronetworks.cs.luc.edu/current/html/queuing.html>)
+
+[Scheduling and Policing Mechanisms](<http://www2.ic.uff.br/~michael/kr1999/6-multimedia/6_06-scheduling_and_policing.htm>)
 
 [General Processor Sharing, Weighted Fair Queueing, and Deficit Round Robin](<http://www.mathcs.emory.edu/~cheung/Courses/558/Syllabus/11-Fairness/>)
 
